@@ -1,0 +1,23 @@
+---
+  wem_console_versions:
+    2006:
+      install_arguments: '/s /v"/qn"'
+      product_id: '{975909FA-7489-4BF6-BFF0-28EBE4FF0C34}'
+    2009:
+      install_arguments: '/s /v"/qn"'
+      product_id: '{753C457B-BA47-4CC5-9B1A-FD382D3C5571}'
+    2012:
+      install_arguments: '/s /v"/qn"'
+      product_id: '{FE8FE4D5-89A2-4C30-BF2A-975D8EA7CEA0}'
+    2103:
+      install_arguments: '/s /v"/qn"'
+      product_id: '{BC8BD1DA-12E1-46B6-AA16-27E8DD2B9CB7}'
+
+  smb_location: \\file1\automation
+
+  wem_console_version: 2103
+  wem_console_smb_location: "{{ smb_location }}\\Citrix\\Workspace Environment Management\\{{ wem_console_version }}"
+  wem_console_install_file: Citrix Workspace Environment Management Console Setup.exe
+  wem_console_install_arguments: "{{ wem_console_versions[wem_console_version].install_arguments }}"
+  wem_console_product_id: "{{ wem_console_versions[wem_console_version].product_id }}"
+  wem_console_install_state: present

@@ -1,0 +1,23 @@
+---
+  wem_broker_versions:
+    2006:
+      install_arguments: '/s /v"/qn"'
+      product_id: '{59333D97-8DBE-4296-A5AE-D0233EA3C3D6}'
+    2009:
+      install_arguments: '/s /v"/qn"'
+      product_id: '{42D7566D-7A86-409F-A392-85B5D24F7A24}'
+    2012:
+      install_arguments: '/s /v"/qn"'
+      product_id: '{20DAF27F-18FE-457D-904D-EFE4A201FC62}'
+    2103:
+      install_arguments: '/s /v"/qn"'
+      product_id: '{F9BFC2F6-2C58-4D10-8694-88CE4018B00E}'
+
+  smb_location: \\file1\automation
+
+  wem_broker_version: 2103
+  wem_broker_smb_location: "{{ smb_location }}\\Citrix\\Workspace Environment Management\\{{ wem_broker_version }}"
+  wem_broker_install_file: Citrix Workspace Environment Management Infrastructure Services Setup.exe
+  wem_broker_install_arguments: "{{ wem_broker_versions[wem_broker_version].install_arguments }}"
+  wem_broker_product_id: "{{ wem_broker_versions[wem_broker_version].product_id }}"
+  wem_broker_install_state: present

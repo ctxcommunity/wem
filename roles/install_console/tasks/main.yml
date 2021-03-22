@@ -1,0 +1,9 @@
+---
+  - name: "Install WEM Console Version {{ wem_console_version }}"
+    win_package:
+      path: "{{ wem_console_smb_location }}\\{{ wem_console_install_file }}"
+      product_id: "{{ wem_console_product_id }}"
+      arguments: "{{ wem_console_install_arguments }}"
+      state: "{{ wem_console_install_state }}"
+      user_name: "{{ ansible_become_user }}"
+      user_password: "{{ ansible_become_pass }}"

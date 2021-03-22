@@ -1,0 +1,19 @@
+---
+galaxy_info:
+  role_name: install_agent
+  author: Joe Shonk
+  description: Install the Citrix Workspace Environment Management Agent
+  company: The Shonk Project
+
+  license: GPL-3.0-only
+
+  min_ansible_version: 2.9
+
+  platforms:
+   - name: Windows
+     versions:
+     - All
+
+  galaxy_tags:
+    - wem
+    - agent
